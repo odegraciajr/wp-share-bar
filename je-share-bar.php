@@ -4,7 +4,7 @@ Plugin Name: Jaden's Share Bar
 Plugin URI: http://jadeneaston.com
 Description: Simple social media share bar with email subscription feature.
 Author: Oscar De Gracia Jr(odegraciajr@gmail.com)
-Version: 1.0
+Version: 1.0.1
 */
 defined( 'ABSPATH' ) or die( 'No script kiddies please!' );
 
@@ -29,16 +29,19 @@ function share_bar_builder($content)
 
 	return $top . $content .$bottom;
 }
-
+function encodeURIComponent($str) {
+    $revert = array('%21'=>'!', '%2A'=>'*', '%27'=>"'", '%28'=>'(', '%29'=>')');
+    return strtr(rawurlencode($str), $revert);
+}
 function share_bar_social () {
 	global $post;
 	$permalink = get_permalink($post->ID);
-	$title = get_the_title();
+	$title = encodeURIComponent(get_the_title());
 	$fbshares = 'Share';
 	ob_start();
 	?>
 		<div class="share_btn">
-			<a class="social_btn comments" href="#comments">
+			<a class="social_btn comments" href="#disqus_thread">
 				<span>Comments</span>
 			</a>
 			<a class="social_btn facebook" data-permalink="<?= $permalink?>" href="#">
@@ -69,8 +72,8 @@ function share_bar_email () {
 			<h3>Like this Post?</h3>
 			<p>Sign up for my blog updates and never miss a post. I’ll send you a FREE eBook as a thank-you.</p>
 			<form action="https://app.getresponse.com/add_subscriber.html" accept-charset="utf-8" method="post">
-				<input name="name" placeholder="Name" type="text">
-				<input name="email" placeholder="Email Address" type="email">
+				<input autocomplete="off" name="name" placeholder="Name" type="text">
+				<input autocomplete="off" name="email" placeholder="Email Address" type="email">
         <input type="hidden" name="campaign_token" value="p7jLp" />
 				<input class="submit" value="Get it Now" type="submit">
 			</form>
@@ -84,6 +87,7 @@ function share_bar_email () {
 
 function je_share_bar_scripts() {
 	if(!is_feed() && !is_home() && !is_page()) {
+  //if (is_single('shortcut'))
     wp_enqueue_style( 'font-awesome', 'https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css' );
 		wp_enqueue_style( 'google-font-oswald', 'https://fonts.googleapis.com/css?family=Oswald' );
 		wp_enqueue_style( 'share_bar_css', plugin_dir_url( __FILE__ ) . '/je-styles.css' );
