@@ -1,0 +1,126 @@
+.je_share_bar{
+  background: transparent;
+  border-radius: 0;
+  clear: both;
+  margin: 1.25em 0;
+  overflow: hidden;
+  padding: 6px;
+}
+.je_share_bar .share_btn{
+
+}
+.share_btn .social_btn{
+  border: medium none;
+  color: #fff;
+  font-family: "adobe-text-pro",Georgia,Times,"Times New Roman",serif;
+  font-size: 0.9em;
+  font-style: normal;
+  font-weight: normal;
+  text-align: center;
+  text-decoration: none;
+  text-rendering: optimizelegibility;
+  text-shadow: none;
+  text-transform: none;
+  cursor: pointer;
+  padding:0.4em 0.9em;
+  display: block;
+  float: left;
+  width: 20%;
+  background-color: #d2d4d6;
+}
+.share_btn .social_btn:hover,
+.share_btn .social_btn:active,
+.share_btn .social_btn:focus{
+  text-decoration: none;
+  background: #ffbb5a none repeat scroll 0 0;
+  text-shadow: none;
+}
+.share_btn .social_btn:active,
+.share_btn .social_btn:focus{
+  border:none !important;
+  outline: none !important;
+}
+.share_btn a.social_btn:before{
+  display: inline-block;
+  font: normal normal normal 1.4em/1 FontAwesome;
+  color: #fff;
+  vertical-align: calc(50% - 0.64em);
+  margin-right: 0.2em;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.share_btn a.comments{
+  background: #0077a1 none repeat scroll 0 0;
+}
+.share_btn a.facebook {
+  background: #0056a4 none repeat scroll 0 0;
+}
+.share_btn a.twitter{
+  background: #52c9f2 none repeat scroll 0 0;
+}
+.share_btn a.email{
+  background: #959595 none repeat scroll 0 0;
+}
+.share_btn a.print{
+  background: #cccccc none repeat scroll 0 0;
+}
+.share_btn a.facebook:before {
+  content: "\f230";
+}
+.share_btn a.twitter:before{
+  content: "\f081";
+}
+.share_btn a.email:before{
+  content: "\f003";
+}
+.share_btn a.print:before{
+  content: "\f02f";
+}
+.je_share_bar .email_subscription{
+  background: #ff9541 none repeat scroll 0 0;
+  color: #fff;
+  font-family: "Helvetica Neue",Helvetica,sans-serif;
+  font-weight: 300;
+  padding: 2em;
+  text-align: center;
+}
+.je_share_bar .email_subscription h3 {
+  color: #fff;
+  font-family: 'Oswald', sans-serif;
+  font-size: 2em;
+  font-weight: 300;
+  margin: 0.15em 0;
+  text-align: center;
+  text-transform: uppercase;
+}
+.je_share_bar .email_subscription p {
+  line-height: 1.4em;
+  margin-bottom: 1em;
+}
+.je_share_bar .email_subscription input[type="text"],
+.je_share_bar .email_subscription input[type="email"] {
+  border: medium none;
+  border-radius: 0;
+  display: inline;
+  font-family: "Helvetica Neue",Helvetica,sans-serif;
+  font-weight: 100;
+  margin: 0 0.25em 0.5em;
+  padding: 0.25em 0.5em;
+  width: 28%;
+  color: #666;
+}
+.je_share_bar .email_subscription input[type="submit"] {
+  background: #00bff0 none repeat scroll 0 0;
+  border: medium none;
+  border-radius: 0;
+  box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.3);
+  color: #fff;
+  font-family: "Helvetica Neue",Helvetica,sans-serif;
+  font-size: 1em;
+  font-weight: 300;
+  line-height: 1.2em;
+  margin: 0 0.25em;
+  padding: 0.25em 2em;
+  text-shadow: none;
+}
