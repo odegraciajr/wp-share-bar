@@ -28,6 +28,9 @@
   width: 20%;
   background-color: #d2d4d6;
 }
+/*
+TODO: separate `background`active,focus on other buttons
+*/
 .share_btn .social_btn:hover,
 .share_btn .social_btn:active,
 .share_btn .social_btn:focus{
