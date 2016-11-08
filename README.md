@@ -1,5 +1,5 @@
-WP Share Bar
-
+# WP Share Bar
+---
 WordPress share bar with email subscribe card.
 
 ### How to install
@@ -8,7 +8,7 @@ WordPress share bar with email subscribe card.
 mkdir wp-share-bar && cd wp-share-bar
 git clone https://github.com/odegraciajr/wp-share-bar.git .
 ```
-Screenshot
+### Screenshot
 
 Top bar
 
