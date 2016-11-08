@@ -1,10 +1,10 @@
 <?php
 /*
-Plugin Name: Jaden's Share Bar
-Plugin URI: http://jadeneaston.com
-Description: Simple social media share bar with email subscription feature.
+Plugin Name: WP Share Bar
+Plugin URI: https://github.com/odegraciajr
+Description: Simple WordPress social media share bar with email subscription feature.
 Author: Oscar De Gracia Jr(odegraciajr@gmail.com)
-Version: 1.0.1
+Version: 1.1.1
 */
 defined( 'ABSPATH' ) or die( 'No script kiddies please!' );
 
