@@ -4,7 +4,6 @@
   clear: both;
   margin: 1.25em 0;
   overflow: hidden;
-  padding: 6px;
 }
 .je_share_bar .share_btn{
 
@@ -12,7 +11,6 @@
 .share_btn .social_btn{
   border: medium none;
   color: #fff;
-  font-family: "adobe-text-pro",Georgia,Times,"Times New Roman",serif;
   font-size: 0.9em;
   font-style: normal;
   font-weight: normal;
@@ -28,14 +26,11 @@
   width: 20%;
   background-color: #d2d4d6;
 }
-/*
-TODO: separate `background`active,focus on other buttons
-*/
 .share_btn .social_btn:hover,
 .share_btn .social_btn:active,
 .share_btn .social_btn:focus{
   text-decoration: none;
-  background: #ffbb5a none repeat scroll 0 0;
+  background: #660000 none repeat scroll 0 0;
   text-shadow: none;
 }
 .share_btn .social_btn:active,
@@ -86,16 +81,14 @@ TODO: separate `background`active,focus on other buttons
   content: "\f02f";
 }
 .je_share_bar .email_subscription{
-  background: #ff9541 none repeat scroll 0 0;
+  background: #660000 none repeat scroll 0 0;
   color: #fff;
-  font-family: "Helvetica Neue",Helvetica,sans-serif;
   font-weight: 300;
   padding: 2em;
   text-align: center;
 }
 .je_share_bar .email_subscription h3 {
   color: #fff;
-  font-family: 'Oswald', sans-serif;
   font-size: 2em;
   font-weight: 300;
   margin: 0.15em 0;
@@ -111,21 +104,20 @@ TODO: separate `background`active,focus on other buttons
   border: medium none;
   border-radius: 0;
   display: inline;
-  font-family: "Helvetica Neue",Helvetica,sans-serif;
   font-weight: 100;
   margin: 0 0.25em 0.5em;
   padding: 0.45em 0.5em;
   width: 28%;
   color: #666 !important;
   background: #fff !important;
+font-size:12px;
 }
 .je_share_bar .email_subscription input[type="submit"] {
-  background: #00bff0 none repeat scroll 0 0;
+  background: #f69226 none repeat scroll 0 0;
   border: medium none;
   border-radius: 0;
   box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.3);
   color: #fff;
-  font-family: "Helvetica Neue",Helvetica,sans-serif;
   font-size: 1em;
   font-weight: 300;
   line-height: 1.2em;

@@ -95,3 +95,50 @@ function je_share_bar_scripts() {
 		wp_enqueue_script( 'je-customscript', plugin_dir_url( __FILE__ ) . '/je-scripts.js', array('jquery'), '1.0.0', true );
 	}
 }
+
+function jesharebar_register_meta_boxes() {
+    add_meta_box( 'meta-box-id', __( 'Sharebar Subtitle', 'textdomain' ), 'jesharebar_meta_display_callback', 'post' );
+}
+
+function jesharebar_meta_display_callback( $post ) {
+	$subtitle = get_post_meta( $post->ID, 'je_subtitle', true );
+	?>
+	<textarea cols="50" rows="2" id="je_subtitle" name="je_subtitle"><?php _e($subtitle);?></textarea>
+    <?php
+		wp_nonce_field( 'je_save_this_meta', 'je_nonce_save_subtitle' );
+}
+
+function jesharebar_save_meta_box( $post_id ) {
+	$nonce_name   = isset( $_POST['je_nonce_save_subtitle'] ) ? $_POST['je_nonce_save_subtitle'] : '';
+	$nonce_action = 'je_save_this_meta';
+	$meta_value = $_POST['je_subtitle'];
+
+	// Check if nonce is set.
+	 if ( ! isset( $nonce_name ) ) {
+			 return;
+	 }
+
+	 // Check if nonce is valid.
+	 if ( ! wp_verify_nonce( $nonce_name, $nonce_action ) ) {
+			 return;
+	 }
+
+	 // Check if user has permissions to save data.
+	 if ( ! current_user_can( 'edit_post', $post_id ) ) {
+			 return;
+	 }
+
+	 // Check if not an autosave.
+	 if ( wp_is_post_autosave( $post_id ) ) {
+			 return;
+	 }
+
+	 // Check if not a revision.
+	 if ( wp_is_post_revision( $post_id ) ) {
+			 return;
+	 }
+
+	 update_post_meta($post_id, 'je_subtitle', $meta_value);
+}
+add_action( 'add_meta_boxes', 'jesharebar_register_meta_boxes' );
+add_action( 'save_post', 'jesharebar_save_meta_box' );
